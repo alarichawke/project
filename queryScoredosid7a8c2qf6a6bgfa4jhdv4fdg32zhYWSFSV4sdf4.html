@@ -2,173 +2,144 @@
 <html lang="zh-cn">
 <head>
   <meta charset="UTF-8">
-  <!-- Mobile viewport fix -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>成绩单</title>
   <style>
     body {
       font-family: Arial, "Microsoft YaHei", sans-serif;
-      background: #fff;
-      margin: 0;
-      padding: 0;
+      background-color: #fafafa;
+      margin: 20px;
       color: #333;
     }
-
-    /* মূল container */
     .container {
-      width: 900px;   /* 👉 PC তে fixed width */
+      width: 900px;
       margin: auto;
+      background: #fff;
+      border: 1px solid #ddd;
+      padding: 20px;
+      box-shadow: 0 0 6px rgba(0,0,0,0.1);
     }
-
     h2, h3 {
       text-align: center;
-      margin: 0;
+      margin-bottom: 10px;
       font-weight: normal;
-    }
-    h2 { font-size: 20px; margin: 15px 0 6px; }
-    h3 { font-size: 13px; color: #555; margin-bottom: 20px; }
-
-    .section {
-      border: 1px solid #ddd;
-      margin-bottom: 15px;
-      background: #fff;
-    }
-    .section-title {
-      background: #f9f9f9;
-      border-bottom: 1px solid #ddd;
-      padding: 8px 12px;
-      font-weight: bold;
-      font-size: 14px;
     }
     table {
       border-collapse: collapse;
       width: 100%;
+      margin-bottom: 20px;
     }
     table td, table th {
       border: 1px solid #ddd;
       padding: 10px;
-      font-size: 14px;
       vertical-align: middle;
     }
-    .info-table td { text-align: left; }
-    .score-table td, .score-table th { text-align: center; }
-
-    .photo { text-align: center; }
-    .photo img { width:120px; border:1px solid #ccc; }
-
+    .info-table td {
+      width: 25%;
+    }
+    .photo {
+      text-align: center;
+    }
+    .photo img {
+      width: 120px;
+      border: 1px solid #ccc;
+    }
+    .subtitle {
+      background: #f7f7f7;
+      padding: 8px;
+      margin: 15px 0 8px;
+      font-weight: bold;
+      border: 1px solid #ddd;
+    }
     .footer {
       text-align: center;
-      padding: 10px 0;
+      margin-top: 15px;
       color: #777;
       font-size: 12px;
-      border-top: 1px solid #ddd;
-    }
-
-    /* 👉 মোবাইলে scale করে fit করানো */
-    @media (max-width: 900px) {
-      .container {
-        transform: scale(calc(100vw / 900));  /* screen width অনুযায়ী scale */
-        transform-origin: top left;           /* উপরের দিক থেকে zoom হবে */
-        width: 900px;
-      }
-      body { 
-        overflow: hidden;   /* ✅ scroll বন্ধ করে দিলাম */
-      }
     }
   </style>
 </head>
 <body>
   <div class="container">
-
     <h2>中文考试成绩在线验证结果查询</h2>
     <h3>汉考国际教育科技（北京）有限公司（CTI）</h3>
 
     <!-- 考生信息 -->
-    <div class="section">
-      <div class="section-title">考生信息</div>
-      <table class="info-table">
-        <tr>
-          <td>证件姓名</td>
-          <td>AHMED SAHARIAR</td>
-          <td rowspan="4" class="photo"><img src="passport-photo.jpg" alt="photo"></td>
-        </tr>
-        <tr>
-          <td>中文姓名</td>
-          <td>哈瑞</td>
-        </tr>
-        <tr>
-          <td>国籍</td>
-          <td>孟加拉国</td>
-        </tr>
-        <tr>
-          <td>性别</td>
-          <td>男</td>
-        </tr>
-      </table>
-    </div>
+    <div class="subtitle">考生信息</div>
+    <table class="info-table">
+      <tr>
+        <td>证件姓名</td>
+        <td>AHMED SAHARIAR</td>
+        <td rowspan="6" class="photo"><img src="passport-photo.jpg" alt="photo"></td>
+      </tr>
+      <tr>
+        <td>中文姓名</td>
+        <td>哈瑞</td>
+      </tr>
+      <tr>
+        <td>国籍</td>
+        <td>孟加拉国</td>
+      </tr>
+      <tr>
+        <td>性别</td>
+        <td>男</td>
+      </tr>
+    </table>
 
     <!-- 考试信息 -->
-    <div class="section">
-      <div class="section-title">考试信息</div>
-      <table class="info-table">
-        <tr>
-          <td>考点名称</td>
-          <td>西安外国语大学(网考)</td>
-        </tr>
-        <tr>
-          <td>准考证号</td>
-          <td>H42502714170000019 H82502714170000019</td>
-        </tr>
-        <tr>
-          <td>证书编号</td>
-          <td>H42503004873</td>
-        </tr>
-        <tr>
-          <td>考试类型</td>
-          <td>HSK四级</td>
-        </tr>
-        <tr>
-          <td>考试时间</td>
-          <td>2025-3-9</td>
-        </tr>
-      </table>
-    </div>
+    <div class="subtitle">考试信息</div>
+    <table>
+      <tr>
+        <td>考点名称</td>
+        <td>西安外国语大学(网考)</td>
+      </tr>
+      <tr>
+        <td>准考证号</td>
+        <td>H42502714170000019 H82502714170000019</td>
+      </tr>
+      <tr>
+        <td>证书编号</td>
+        <td>H42503004873</td>
+      </tr>
+      <tr>
+        <td>考试类型</td>
+        <td>HSK四级</td>
+      </tr>
+      <tr>
+        <td>考试时间</td>
+        <td>2025-3-9</td>
+      </tr>
+    </table>
 
-    <!-- HSK 成绩 -->
-    <div class="section">
-      <div class="section-title">HSK四级（2025-3-9）中文水平考试</div>
-      <table class="score-table">
-        <tr>
-          <th>听力</th>
-          <th>阅读</th>
-          <th>写作</th>
-          <th>总分</th>
-        </tr>
-        <tr>
-          <td>82</td>
-          <td>65</td>
-          <td>76</td>
-          <td>223</td>
-        </tr>
-      </table>
-    </div>
+    <!-- 成绩部分 -->
+    <div class="subtitle">HSK四级（2025-3-9）中文水平考试</div>
+    <table>
+      <tr>
+        <th>听力</th>
+        <th>阅读</th>
+        <th>写作</th>
+        <th>总分</th>
+      </tr>
+      <tr>
+        <td>82</td>
+        <td>65</td>
+        <td>76</td>
+        <td>223</td>
+      </tr>
+    </table>
 
-    <!-- HSKK 成绩 -->
-    <div class="section">
-      <div class="section-title">HSKK（中级）（2025-3-9）中文水平考试</div>
-      <table class="score-table">
-        <tr>
-          <th>口试</th>
-          <th>总分</th>
-          <th>合格情况</th>
-        </tr>
-        <tr>
-          <td>68</td>
-          <td>68</td>
-          <td>合格</td>
-        </tr>
-      </table>
-    </div>
+    <div class="subtitle">HSKK（中级）（2025-3-9）中文水平考试</div>
+    <table>
+      <tr>
+        <th>口试</th>
+        <th>总分</th>
+        <th>合格情况</th>
+      </tr>
+      <tr>
+        <td>68</td>
+        <td>68</td>
+        <td>合格</td>
+      </tr>
+    </table>
 
     <div class="footer">最终解释权归汉考国际所有</div>
   </div>
