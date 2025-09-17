@@ -36,12 +36,19 @@
     .info-table td {
       width: 25%;
     }
+    /* ✅ Passport-size box */
     .photo {
+      width: 150px;
+      height: 195px; /* 3.5cm × 4.5cm ratio */
+      border-left: 1px solid #ddd;
       text-align: center;
+      background: #fff;
     }
     .photo img {
-      width: 120px;
-      border: 1px solid #ccc;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;   /* 🔥 এখন ছবির মাথা আর চিবুক কাটা যাবে না */
+      display: block;
     }
     .subtitle {
       background: #f7f7f7;
@@ -69,7 +76,9 @@
       <tr>
         <td>证件姓名</td>
         <td>AHMED SAHARIAR</td>
-        <td rowspan="6" class="photo"><img src="passport-photo.jpg" alt="photo"></td>
+        <td rowspan="4" class="photo">
+          <img src="passport-photo.jpg" alt="photo">
+        </td>
       </tr>
       <tr>
         <td>中文姓名</td>
