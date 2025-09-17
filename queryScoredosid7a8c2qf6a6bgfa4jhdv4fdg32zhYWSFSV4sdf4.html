@@ -2,42 +2,39 @@
 <html lang="zh-cn">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- important -->
+  <!-- Mobile viewport fix -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>成绩单</title>
   <style>
     body {
       font-family: Arial, "Microsoft YaHei", sans-serif;
-      background-color: #fff;
+      background: #fff;
       margin: 0;
       padding: 0;
       color: #333;
     }
+
+    /* মূল container */
     .container {
-      width: 100%;              /* PC তে পুরো স্ক্রিন জুড়ে */
-      margin: 0 auto;
+      width: 900px;   /* 👉 PC তে fixed width */
+      margin: auto;
     }
+
     h2, h3 {
       text-align: center;
       margin: 0;
       font-weight: normal;
     }
-    h2 {
-      font-size: 22px;
-      margin: 15px 0 6px;
-    }
-    h3 {
-      font-size: 14px;
-      color: #555;
-      margin-bottom: 20px;
-    }
+    h2 { font-size: 20px; margin: 15px 0 6px; }
+    h3 { font-size: 13px; color: #555; margin-bottom: 20px; }
+
     .section {
       border: 1px solid #ddd;
-      margin: 0 0 15px;
-      border-radius: 4px;
-      background-color: #fff;
+      margin-bottom: 15px;
+      background: #fff;
     }
     .section-title {
-      background-color: #f9f9f9;
+      background: #f9f9f9;
       border-bottom: 1px solid #ddd;
       padding: 8px 12px;
       font-weight: bold;
@@ -53,52 +50,36 @@
       font-size: 14px;
       vertical-align: middle;
     }
-    /* 信息表 = বামে */
-    .info-table td {
-      text-align: left;
-    }
-    /* 成绩表 কেন্দ্র */
-    .score-table td, .score-table th {
-      text-align: center;
-    }
-    .photo {
-      text-align: center;
-    }
-    .photo img {
-      width: 120px;
-      border: 1px solid #ccc;
-    }
+    .info-table td { text-align: left; }
+    .score-table td, .score-table th { text-align: center; }
+
+    .photo { text-align: center; }
+    .photo img { width:120px; border:1px solid #ccc; }
+
     .footer {
       text-align: center;
-      padding: 10px 0 30px;
+      padding: 10px 0;
       color: #777;
       font-size: 12px;
+      border-top: 1px solid #ddd;
     }
 
-    /* 📱 Mobile layout */
-    @media (max-width: 768px) {
+    /* 👉 মোবাইলে scale করে fit করানো */
+    @media (max-width: 900px) {
       .container {
-        width: 95%;   /* পাশে ফাঁকা (margin) থাকবে */
-        margin: 0 auto;
+        transform: scale(calc(100vw / 900));  /* screen width অনুযায়ী scale */
+        transform-origin: top left;           /* উপরের দিক থেকে zoom হবে */
+        width: 900px;
       }
-      .section {
-        margin-bottom: 20px;
-      }
-      .photo img {
-        width: 90px;
-      }
-      table td, table th {
-        padding: 6px;
-        font-size: 13px;
-      }
-      .footer {
-        margin-bottom: 20px; /* নিচে extra empty space */
+      body { 
+        overflow: hidden;   /* ✅ scroll বন্ধ করে দিলাম */
       }
     }
   </style>
 </head>
 <body>
   <div class="container">
+
     <h2>中文考试成绩在线验证结果查询</h2>
     <h3>汉考国际教育科技（北京）有限公司（CTI）</h3>
 
