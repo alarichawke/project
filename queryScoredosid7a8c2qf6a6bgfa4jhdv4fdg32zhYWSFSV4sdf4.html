@@ -34,22 +34,24 @@
       vertical-align: middle;
     }
     .info-table td {
-      width: 25%;
+      width: 42%;
     }
     /* ✅ Passport-size box */
-    .photo {
-      width: 150px;
-      height: 195px; /* Passport ratio 3.5x4.5 */
-      border-left: 1px solid #ddd;
-      text-align: center;
-      background: #fff;
-    }
-    .photo img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;   /* 👉 Cropping হবে না, পুরো ছবি থাকবে */
-      display: block;
-    }
+.photo {
+  width: 10px;
+  height: 150px; /* Passport ratio 3.5x4.5 */
+  border-left: 1px solid #ddd;
+  text-align: center;
+  background: #fff; /* background দিয়ে ফাঁকা জায়গা পূরণ */
+  overflow: hidden; /* ছবির কোনো overflow নেই */
+}
+
+.photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* ছবি distort হবে না */
+  display: block;
+}
     .subtitle {
       background: #f7f7f7;
       padding: 8px;
@@ -162,5 +164,6 @@
   </div>
 </body>
 </html>
+
 
 
