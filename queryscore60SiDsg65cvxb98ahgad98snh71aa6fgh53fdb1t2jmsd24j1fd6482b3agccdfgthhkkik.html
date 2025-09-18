@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="UTF-8">
+  <title>成绩单</title>
+  <style>
+    body {
+      font-family: Arial, "Microsoft YaHei", sans-serif;
+      background-color: #fafafa;
+      margin: 20px;
+      color: #333;
+    }
+    .container {
+      width: 900px;
+      margin: auto;
+      background: #fff;
+      border: 1px solid #ddd;
+      padding: 20px;
+      box-shadow: 0 0 6px rgba(0,0,0,0.1);
+    }
+h2 {
+  text-align: center;
+  margin-bottom: 10px;
+  font-weight: 600; /* 👉 Bold-এর থেকে একটু কম */
+}
+
+h3 {
+  text-align: center;
+  margin-bottom: 10px;
+  font-weight: normal; /* আগের মতো normal */
+}
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-bottom: 20px;
+    }
+    table td, table th {
+      border: 1px solid #ddd;
+      padding: 10px;
+      vertical-align: middle;
+    }
+    .info-table td {
+      width: 42%;
+    }
+    /* ✅ Passport-size box */
+.photo {
+  width: 10px;
+  height: 150px; /* Passport ratio 3.5x4.5 */
+  border-left: 1px solid #ddd;
+  text-align: center;
+  background: #fff; /* background দিয়ে ফাঁকা জায়গা পূরণ */
+  overflow: hidden; /* ছবির কোনো overflow নেই */
+}
+
+.photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* ছবি distort হবে না */
+  display: block;
+}
+    .subtitle {
+      background: #f7f7f7;
+      padding: 8px;
+      margin: 15px 0 8px;
+      font-weight: bold;
+      border: 1px solid #ddd;
+    }
+    .footer {
+      text-align: center;
+      margin-top: 15px;
+      color: #777;
+      font-size: 12px;
+    }
+
+    /* ✅ Number middle aligned */
+    .score-table td, 
+    .score-table th {
+      text-align: center;   /* Horizontally center */
+      vertical-align: middle; /* Vertically middle */
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>中文考试成绩在线验证结果查询</h2>
+    <h3>汉考国际教育科技（北京）有限公司（CTI）</h3>
+
+    <!-- 考生信息 -->
+    <div class="subtitle">考生信息</div>
+    <table class="info-table">
+      <tr>
+        <td>证件姓名</td>
+        <td>MUHAMMAD NUMAN</td>
+        <td rowspan="4" class="photo">
+          <img src="passport-photo.jpg" alt="photo">
+        </td>
+      </tr>
+      <tr>
+        <td>中文姓名</td>
+        <td>哈瑞</td>
+      </tr>
+      <tr>
+        <td>国籍</td>
+        <td>巴基斯坦</td>
+      </tr>
+      <tr>
+        <td>性别</td>
+        <td>男</td>
+      </tr>
+    </table>
+
+    <!-- 考试信息 -->
+    <div class="subtitle">考试信息</div>
+    <table>
+      <tr>
+        <td>考点名称</td>
+        <td>西安外国语大学(网考)</td>
+      </tr>
+      <tr>
+        <td>准考证号</td>
+        <td>H42384899759616050 H85347423856195964</td>
+      </tr>
+      <tr>
+        <td>证书编号</td>
+        <td>HHW44857008562</td>
+      </tr>
+      <tr>
+        <td>考试类型</td>
+        <td>HSK四级</td>
+      </tr>
+      <tr>
+        <td>考试时间</td>
+        <td>2025-08-30</td>
+      </tr>
+    </table>
+
+    <!-- HSK 成绩 -->
+    <div class="subtitle">HSK四级（2025-08-30）中文水平考试</div>
+    <table class="score-table">
+      <tr>
+        <th>听力</th>
+        <th>阅读</th>
+        <th>写作</th>
+        <th>总分</th>
+      </tr>
+      <tr>
+        <td>85</td>
+        <td>88</td>
+        <td>57</td>
+        <td>230</td>
+      </tr>
+    </table>
+
+    <!-- HSKK 成绩 -->
+    <div class="subtitle">HSKK（中级）（2025-08-30）中文水平考试</div>
+    <table class="score-table">
+      <tr>
+        <th>口试</th>
+        <th>总分</th>
+        <th>合格情况</th>
+      </tr>
+      <tr>
+        <td>54</td>
+        <td>54</td>
+        <td>合格</td>
+      </tr>
+    </table>
+
+    <div class="footer">最终解释权归汉考国际所有</div>
+  </div>
+</body>
+</html>
+
+
+
+
+
